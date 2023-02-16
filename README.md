@@ -1,5 +1,5 @@
 # Quick & Dirty clickhouse TCP proxy
-This project is a query & dirty TCP proxy for clickhouse in order to chose the best approach for the TCP feature in the project chproxy
+This project is a quick & dirty TCP proxy for clickhouse in order to chose the best approach for the TCP feature in the project chproxy
 
 # How To use
 first run the proxy (it assumes there is a local clickhouse server running on port 9000):
@@ -16,7 +16,6 @@ using the decoding logic of ch-go reduces a LOT the processing speed (for a quer
 * 47.5 sec using the decoding logic of ch-go (sniffAndCopyStreamV2)
 * 3.7 -10 sec (the first run takes 3.7 and the next ones 5-10 sec, likely a gargabe collector issue) using a dummy logic that doesn't decode payloads (sniffAndCopyStreamV1)
 * 3.5 sec without using a proxy
-=> we can rely 100% on the code of ch-go
 
 
 processing speed for the given query (only one run)
@@ -24,3 +23,9 @@ processing speed for the given query (only one run)
 * 34 sec using the decoding logic of ch-go (sniffAndCopyStreamV2)
 * 19 sec using a dummy logic that doesn't decode payloads
 * 18 sec without using a proxy
+
+
+=> we can't rely 100% on the code of ch-go
+
+## hanlding versionning
+very tricky
